@@ -1,0 +1,116 @@
+
+
+body {
+    margin: 0;
+    overflow: clip;
+    display: grid;
+    grid-template-rows: 40px 1fr;
+    height: 100vh;
+}
+
+body * {
+    box-sizing: border-box;   
+}
+
+#bar {
+    background: #202327;
+    color: white;
+    size: 40px;
+    -webkit-app-region: drag;
+    width: auto;
+}
+
+#title {
+    vertical-align: middle;
+    padding: 10px;
+    height: auto;
+    display: inline-block;
+    font-family: 'Jetbrains mono';
+    user-select: none;
+    -webkid-touch-callout: none;
+    -webkit-user-select: none;
+    
+}
+
+#appIcon {
+    vertical-align: middle;
+    height: 25px;
+    padding-left: 10px;
+    display: inline-block;
+    user-select: none;
+    -webkid-touch-callout: none;
+    -webkit-user-select: none;
+}
+
+#controls {
+    vertical-align: middle;
+    float: right;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100px;
+    padding: 10px;
+    padding-right: 100px;
+    -webkit-app-region: none;
+}
+
+#controls button {
+    color: white;
+    outline: 0;
+    border: 0;
+    background: none;
+    -webkit-app-region: none;
+    
+}
+
+.controlIMG {
+    height: 20px;
+}
+
+
+
+#close:hover img {
+    content: url("../img/windowControls/close-hover.svg");
+    transform: scale(120%);
+}
+
+#close:not(:hover) img {
+    content: url("../img/windowControls/close-normal.svg");
+}
+
+#close:active img {
+    content: url("../img/windowControls/close-press.svg");
+    transform: scale(95%);
+}
+
+
+#minimize:hover img {
+    content: url("../img/windowControls/min-hover.svg");
+    transform: scale(120%);
+}
+
+#minimize:not(:hover) img {
+    content: url("../img/windowControls/min-normal.svg");
+}
+
+#minimize:active img {
+    content: url("../img/windowControls/min-press.svg");
+    transform: scale(95%);
+}
+
+
+#maximize:hover img {
+    content: url("../img/windowControls/max-hover.svg");
+    transform: scale(120%);
+}
+
+#maximize:not(:hover) img {
+    content: url("../img/windowControls/max-normal.svg");
+}
+
+#maximize:active img {
+    content: url("../img/windowControls/max-press.svg");
+    transform: scale(95%);
+}
+
+
+

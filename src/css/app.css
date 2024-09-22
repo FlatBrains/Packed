@@ -1,0 +1,26 @@
+#app {
+    display: grid;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    grid-template-columns: 50% 50%;
+}
+
+#side {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+}
+
+#sidebar {
+    background-color: rgb(0, 255, 217);
+}
+
+#sidepanel {
+    background-color: rgb(111, 0, 255);
+}
+
+#main {
+    background-color: rgb(248, 30, 30);
+}
+
+
