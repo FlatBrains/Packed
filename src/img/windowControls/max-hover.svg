@@ -1,48 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   version="1.1"
-   id="svg2"
-   width="116"
-   height="114.66667"
-   viewBox="0 0 116 114.66667"
-   sodipodi:docname="max-hover.eps"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <defs
-     id="defs6" />
-  <sodipodi:namedview
-     id="namedview4"
-     pagecolor="#ffffff"
-     bordercolor="#000000"
-     borderopacity="0.25"
-     inkscape:showpageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1" />
-  <g
-     id="g8"
-     inkscape:groupmode="layer"
-     inkscape:label="ink_ext_XXXXXX"
-     transform="matrix(1.3333333,0,0,-1.3333333,0,114.66667)">
-    <g
-       id="g10"
-       transform="scale(0.1)">
-      <path
-         d="m 437.004,4.34766 c 236.059,0 427.426,191.36734 427.426,427.42934 0,236.063 -191.367,427.43 -427.426,427.43 C 200.938,859.207 9.57031,667.84 9.57031,431.777 9.57031,195.715 200.938,4.34766 437.004,4.34766"
-         style="fill:#13c11e;fill-opacity:1;fill-rule:evenodd;stroke:none"
-         id="path12" />
-      <path
-         d="m 437.004,40.6992 c 215.984,0 391.074,175.0938 391.074,391.0778 0,215.985 -175.09,391.075 -391.074,391.075 -215.988,0 -391.0782,-175.09 -391.0782,-391.075 0,-215.984 175.0902,-391.0778 391.0782,-391.0778"
-         style="fill:#39ea49;fill-opacity:1;fill-rule:evenodd;stroke:none"
-         id="path14" />
-      <path
-         d="m 321.367,649.883 h 267.199 c 35.579,0 64.692,-29.113 64.692,-64.695 V 317.992 Z M 553.691,213.672 H 285.438 c -35.583,0 -64.692,29.109 -64.692,64.691 V 546.617 L 553.691,213.672"
-         style="fill:#0b7407;fill-opacity:1;fill-rule:evenodd;stroke:none"
-         id="path16" />
-    </g>
-  </g>
+<svg width="116" height="115" viewBox="0 0 116 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1_26)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M58.2672 114.087C89.7418 114.087 115.257 88.5713 115.257 57.0964C115.257 25.6213 89.7418 0.10574 58.2672 0.10574C26.7918 0.10574 1.27606 25.6213 1.27606 57.0964C1.27606 88.5713 26.7918 114.087 58.2672 114.087Z" fill="#D86323"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M58.2672 109.24C87.0651 109.24 110.41 85.8943 110.41 57.0964C110.41 28.2984 87.0651 4.95307 58.2672 4.95307C29.4688 4.95307 6.12347 28.2984 6.12347 57.0964C6.12347 85.8943 29.4688 109.24 58.2672 109.24Z" fill="#F68B46"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M42.8489 28.0156H78.4755C83.2193 28.0156 87.1011 31.8973 87.1011 36.6416V72.2677L42.8489 28.0156ZM73.8255 86.1771H38.0584C33.314 86.1771 29.4328 82.2959 29.4328 77.5516V41.7844L73.8255 86.1771Z" fill="#9B3B20"/>
+</g>
+<defs>
+<clipPath id="clip0_1_26">
+<rect width="116" height="114.667" fill="white"/>
+</clipPath>
+</defs>
 </svg>

@@ -24,7 +24,8 @@ app.on("ready", () => {
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false
-    }
+    },
+    icon: "src/img/icon.ico"
   });
 
 
