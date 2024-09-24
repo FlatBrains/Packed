@@ -50,7 +50,7 @@ body * {
 
 #controls {
     -webkit-app-region: none;
-    
+    user-select: none;
     align-self: center;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -70,6 +70,7 @@ body * {
 
 .controlIMG {
     height: 20px;
+    transition: ease-in-out 50ms
 }
 
 

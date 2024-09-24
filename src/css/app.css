@@ -5,26 +5,39 @@
     overflow: hidden;
     grid-template-columns: 40% 60%;
     background-color: var(--background);
+    align-self: center;
+    justify-self: center;
+    padding: 10px;
 
 }
 
 
 
 #main, #sidepanel {
-    display: flex;
     align-self: center;
     justify-self: center;
     border-radius: 10px;
-    height: 95%;
-    width: 95%;
+    height: 100%;
+    width: 100%;
+    transition: ease-in-out 50ms
 }
 
  #sidepanel {
-    background-color: var(--secondary);
+    margin-right: 6px;
+    border: 5px solid var(--secondary);
 }
 
 #main {
-    background-color: var(--primary);
+    margin-left: 6px;
+    border: 5px solid var(--primary);
+    
 }
+
+/*
+#main:not(:hover), #sidepanel:not(:hover) {
+    filter: blur(1px)
+}
+*/
+
 
 
