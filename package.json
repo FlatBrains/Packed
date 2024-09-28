@@ -9,8 +9,14 @@
   },
   "author": "FlamingFire0 (Flamingo)",
   "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.4",
+    "@babel/preset-react": "^7.24.7",
+    "@babel/register": "^7.24.6",
     "@electron/remote": "^2.1.2",
+    "electron": "^32.0.2",
     "electron-builder": "^25.0.5",
-    "electron": "^32.0.2"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }

@@ -1,8 +1,6 @@
 const { app, BrowserWindow, ipcMain } = require("electron");
 
-
-
-
+require("@babel/register");
 
 let win
 

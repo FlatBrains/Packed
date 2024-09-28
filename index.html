@@ -9,26 +9,28 @@
   </head>
   <body id="root">
 
-      <div id="bar">
+    <div id="bar">
         
-        
-        <img src="src/img/icon.svg" id="icon" />
+      <div id="logo">
+        <img id="icon" src="src/img/icon.svg"/>
         <div id="title">PACKED</div>
+      </div>
         
 
-        <div id="controls">
-          <button title="Minimize" id="minimize" ><img class="controlIMG"/></button>
-          <button title="Maximize" id="maximize" ><img class="controlIMG"/></button>
-          <button title="Close"    id="close"    ><img class="controlIMG"/></button>          
-        </div>
-        
+      <div id="controls">
+        <button title="Minimize" id="minimize" ><img class="controlIMG"/></button>
+        <button title="Maximize" id="maximize" ><img class="controlIMG"/></button>
+        <button title="Close"    id="close"    ><img class="controlIMG"/></button>          
       </div>
 
-      <div id="app">
-        <div id="sidepanel"></div> 
-        <div id="main"></div>
-      </div>
+      
+    </div>
+    
+    <div id="app"></div>
+
+
   </body>
 
   <script src="src/js/titleBar.js"></script>
+  <script src="src/js/index.jsx"></script>
 </html>

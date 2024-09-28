@@ -13,7 +13,7 @@
 
 
 
-#main, #sidepanel {
+#main, #side {
     align-self: center;
     justify-self: center;
     border-radius: 10px;
@@ -22,9 +22,10 @@
     transition: ease-in-out 50ms
 }
 
- #sidepanel {
+ #side {
     margin-right: 6px;
     border: 5px solid var(--secondary);
+    display: grid;
 }
 
 #main {
@@ -33,8 +34,14 @@
     
 }
 
+#objectRoot {
+    display: grid;
+    justify-content: center;
+}
+
+
 /*
-#main:not(:hover), #sidepanel:not(:hover) {
+#main:not(:hover), #side:not(:hover) {
     filter: blur(1px)
 }
 */
