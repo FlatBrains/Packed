@@ -1,7 +1,6 @@
 {
   "name": "packed",
   "version": "1.0.0",
-  "description": "A Minecraft Resource Pack Editor",
   "main": "main.js",
   "scripts": {
     "dev": "electron .",
@@ -9,9 +8,10 @@
   },
   "author": "Flatbrains",
   "devDependencies": {
-    "electron": "^32.0.2",
     "@electron/remote": "^2.1.2",
-    "electron-builder": "^25.0.5"
+    "electron": "^32.0.2",
+    "electron-builder": "^25.0.5",
+    "htmlhint": "^1.1.4"
   },
   "build": {
     "appId": "net.flatbrains.packed",

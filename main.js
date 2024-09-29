@@ -16,10 +16,12 @@ app.on("ready", () => {
     frame: false,
     webPreferences: {
       nodeIntegration: true,
-      contextIsolation: false
+      contextIsolation: false,
     },
-    icon: "src/img/icon.ico"
+    icon: "src/img/icon.ico",
   });
+
+  win.setTitle(`PACKED ${app.getVersion()}`)
   
   ipcMain.on("close-app", () => {win.close()});
   ipcMain.on("minimize-app", () => {win.minimize()});
