@@ -7,16 +7,28 @@
     "dev": "electron .",
     "build": "electron-builder"
   },
-  "author": "FlamingFire0 (Flamingo)",
+  "author": "Flatbrains",
   "devDependencies": {
-    "@babel/core": "^7.25.2",
-    "@babel/preset-env": "^7.25.4",
-    "@babel/preset-react": "^7.24.7",
-    "@babel/register": "^7.24.6",
-    "@electron/remote": "^2.1.2",
     "electron": "^32.0.2",
-    "electron-builder": "^25.0.5",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "@electron/remote": "^2.1.2",
+    "electron-builder": "^25.0.5"
+  },
+  "build": {
+    "appId": "net.flatbrains.packed",
+    "productName": "Packed",
+    "copyright": "Copyright © 2024 Flatbrains",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "icon": "src/img/icon.ico"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "deb",
+      "category": "Application"
+    }
   }
 }

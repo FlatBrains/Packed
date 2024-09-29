@@ -4,4 +4,29 @@
     --primary: #d78a8a;
     --secondary: #dc9aca;
     --accent: #d1b1f3;
+
+    margin: 0;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 40px 1fr;
+    height: 100vh;
+}
+
+#root * {
+    box-sizing: border-box;
+    font-family: Jetbrains mono, Arial, Helvetica, sans-serif;
+    user-select: none;
+}
+
+.gradient {
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    
+    background-clip: text;
+    color: transparent;
+}
+
+
+
+.glass {
+    backdrop-filter: blur(10px);
 }

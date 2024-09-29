@@ -14,15 +14,18 @@
 
 
 #main, #side {
-    align-self: center;
-    justify-self: center;
+
     border-radius: 10px;
-    height: 100%;
-    width: 100%;
-    transition: ease-in-out 50ms
+    transition: ease-in-out 50ms;
+    
 }
 
- #side {
+#main *, #side * {
+    padding: 1rem;
+    font-weight: bold;
+}
+
+#side {
     margin-right: 6px;
     border: 5px solid var(--secondary);
     display: grid;

@@ -1,17 +1,4 @@
 
-
-body {
-    margin: 0;
-    overflow: hidden;
-    display: grid;
-    grid-template-rows: 40px 1fr;
-    height: 100vh;
-}
-
-body * {
-    box-sizing: border-box;   
-}
-
 #bar {
     -webkit-app-region: drag;
     background: #202327;

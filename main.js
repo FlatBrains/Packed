@@ -1,17 +1,12 @@
 const { app, BrowserWindow, ipcMain } = require("electron");
 
-require("@babel/register");
-
 let win
-
-
 
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") app.quit()
 })
 
 app.on("ready", () => {
-
 
   win = new BrowserWindow({
     width: 800,
@@ -25,9 +20,6 @@ app.on("ready", () => {
     },
     icon: "src/img/icon.ico"
   });
-
-
-
   
   ipcMain.on("close-app", () => {win.close()});
   ipcMain.on("minimize-app", () => {win.minimize()});
@@ -38,7 +30,6 @@ app.on("ready", () => {
       win.maximize()
     }
   });
-
 
   win.loadFile("index.html");
 })
