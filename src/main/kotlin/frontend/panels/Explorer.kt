@@ -99,7 +99,7 @@ fun Explorer(modifier: Modifier, scrollState: ScrollState) {
     filteredItems.forEach {
 
 
-        val split = it.path.replace("\\", "/").replace("${Backend.Pack.current.items}/", "").split("/")
+        val split = it.path.replace("\\", "/").replace("${Backend.Pack.current.base}/", "").split("/")
 
         //logger.info(split.toString())
         //logger.info(Backend.Pack.current.items)

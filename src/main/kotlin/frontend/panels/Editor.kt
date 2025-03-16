@@ -6,12 +6,16 @@ import androidx.compose.material.IconButton
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.PlusOne
+import androidx.compose.material.icons.sharp.Create
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import backend.Backend
+import classes.minecraft.Key
 import frontend.Icon
 import frontend.Mocha
 import frontend.Shapes
@@ -19,12 +23,18 @@ import frontend.components.ScrollableColumn
 import classes.minecraft.Key.Companion.toKeyString
 import classes.minecraft.Key.Companion.toPackPath
 import classes.minecraft.lists.structures.Folders
+import tasks.ItemTemplate
+import tasks.createItem
 import java.io.File
 
 @Composable
 fun Editor(modifier: Modifier) {
     Surface(modifier.fillMaxHeight().padding(8.dp), shape = MaterialTheme.shapes.small ) {
         ScrollableColumn(horizontalAlignment = Alignment.CenterHorizontally) {
+
+
+            //IconButton({ createItem(Key("minecraft", "apple"), ItemTemplate.BasicModel) }) { Image(Icons.Sharp.Create, null) }
+
             Text("Selected Item", fontSize = 20.sp)
             Text(Backend.itemSelection.value?.toKeyString(true) ?: "None")
 

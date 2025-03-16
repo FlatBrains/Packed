@@ -36,7 +36,7 @@ fun MainMenu() {
 
             Row(modifier = Modifier.fillMaxSize()) {
 
-                Sidebar()
+                //Sidebar()
                 HorizontalSplitPane(splitPaneState = splitterState) {
                     first( 300.dp) { Explorer(Modifier.weight(1F), rememberScrollState()) }
                     second(300.dp) { Editor(  Modifier.weight(1F) ) }
@@ -57,16 +57,7 @@ fun MainMenu() {
                                     .background(Mocha.Overlay0.copy(alpha = 0.2F), MaterialTheme.shapes.small)
                                     .width(9.dp)
                                     .fillMaxHeight()
-                            ) {
-                                Box(
-                                    Modifier
-                                    .width(0.4.dp)
-                                    .fillMaxHeight(0.97F)
-                                    .align(Alignment.Center)
-                                    .background(
-                                        Mocha.Red.copy(0.5F),
-                                        MaterialTheme.shapes.small)) {}
-                            }
+                            ) {}
                         }
                     }
                 }
