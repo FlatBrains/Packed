@@ -5,10 +5,10 @@ import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.outlined.InsertDriveFile
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.outlined.Folder
 import androidx.compose.material.icons.outlined.FolderOpen
-import androidx.compose.material.icons.outlined.InsertDriveFile
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -16,6 +16,7 @@ import androidx.compose.ui.unit.dp
 import backend.Backend
 import backend.debug.logger
 import common.Utilities.searchItems
+import frontend.components.Image
 import frontend.components.ScrollableLazyColumn
 import java.io.File
 
@@ -82,7 +83,7 @@ fun Explorer(modifier: Modifier, scrollState: ScrollState) {
                                 verticalAlignment = Alignment.CenterVertically
                             ) {
                                 Spacer(Modifier.width(20.dp * depth))
-                                Icon(Icons.Outlined.InsertDriveFile, null, modifier = Modifier.size(24.dp))
+                                Image(Icons.AutoMirrored.Outlined.InsertDriveFile)
                                 Spacer(Modifier.width(5.dp))
                                 Text(file.key)
 
@@ -99,7 +100,7 @@ fun Explorer(modifier: Modifier, scrollState: ScrollState) {
     filteredItems.forEach {
 
 
-        val split = it.path.replace("\\", "/").replace("${Backend.Pack.current.base}/", "").split("/")
+        val split = it.path.replace("\\", "/").replace("${Backend.Pack.base}/", "").split("/")
 
         //logger.info(split.toString())
         //logger.info(Backend.Pack.current.items)

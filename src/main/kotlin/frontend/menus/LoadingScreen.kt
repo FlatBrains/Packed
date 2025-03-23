@@ -1,14 +1,14 @@
 package frontend.menus
 
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import frontend.Icon
 import frontend.Mocha
-import org.jetbrains.skia.Surface
 
 
 @Composable
@@ -20,7 +20,9 @@ fun LoadingScreen() {
             modifier = Modifier.fillMaxSize()
         ) {
 
-            Image(Icon.PackedWhite.painter(), null, Modifier.fillMaxSize(0.5F))
+            //Image(Icon, null, Modifier.fillMaxSize(0.5F))
+            
+            Icon.PackedWhite.toImage(modifier = Modifier.fillMaxSize(0.5F))
 
         }
     }

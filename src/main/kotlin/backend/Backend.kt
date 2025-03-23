@@ -1,23 +1,21 @@
 package backend
 
-import common.FileUtils.extractFiles
 import androidx.compose.runtime.mutableStateOf
-import classes.minecraft.Item
-import classes.minecraft.Model
-import java.io.File
-import java.util.logging.ConsoleHandler
 import backend.debug.LogFormatter
 import backend.debug.logger
-import classes.packed.HistoryElement
+import classes.minecraft.Item
+import classes.minecraft.Model
 import classes.packed.Cache
+import classes.packed.HistoryElement
+import common.FileUtils.extractFiles
 import common.Utilities.openFileWithSpecificApp
 import frontend.App
 import frontend.AppState
 import kotlinx.coroutines.*
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.encodeToJsonElement
-import java.io.BufferedReader
-import java.io.InputStreamReader
+import java.io.File
+import java.util.logging.ConsoleHandler
 
 object Backend {
 
@@ -33,7 +31,15 @@ object Backend {
         val itemTextures: String = "$base/textures/item"
     ) {
         companion object {
-            var current: Pack = Pack("", "")
+            var current: Pack? = null
+            
+            val root get() = current!!.root
+            val namespace get() = current!!.namespace
+            val name get() = current!!.name
+            val base get() = current!!.base
+            val items get() = current!!.items
+            val itemModels get() = current!!.itemModels
+            val itemTextures get() = current!!.itemTextures
         }
     }
 
@@ -69,8 +75,7 @@ object Backend {
 
             GlobalScope.launch {
                 withContext(Dispatchers.IO) {
-                    App.appState.value = AppState.LOADING
-                    App.title.value = "Packed: Loading"
+                    App.setState(AppState.LOADING)
                 }
 
                 withContext(Dispatchers.IO) {
@@ -78,12 +83,32 @@ object Backend {
                     //loadModels()
                 }
 
-                App.appState.value = AppState.MAIN
-                App.title.value = "Packed: ${Pack.current.name}@${Pack.current.namespace}"
+                App.setState(AppState.MAIN)
             }
 
         } else {
             logger.warning("Failed to verify pack!")
+        }
+    }
+    
+    @OptIn(DelicateCoroutinesApi::class)
+    fun returnToHome()  {
+        
+        Pack.current = null
+        
+        logger.info("Returning back to home")
+        
+        GlobalScope.launch {
+            withContext(Dispatchers.IO) {
+                App.setState(AppState.LOADING)
+            }
+            
+            withContext(Dispatchers.IO) {
+                loadedItems.clear()
+                //loadModels()
+            }
+            
+            App.setState(AppState.HOME)
         }
     }
 
@@ -98,8 +123,10 @@ object Backend {
 
     fun loadItems() {
         val itemsFiles = mutableMapOf<File, String>()
+        
+        if (Backend.Pack.current == null) { return }
 
-        File(Pack.current.items).extractFiles().forEach {
+        File(Backend.Pack.current!!.items).extractFiles().forEach {
             itemsFiles[it] = it.readText()
         }
 
@@ -112,7 +139,7 @@ object Backend {
     fun loadModels() {
         val modelFiles = mutableMapOf<File, String>()
 
-        File(Pack.current.itemModels).extractFiles().filter { it.extension == "json" }.forEach {
+        File(Backend.Pack.itemModels).extractFiles().filter { it.extension == "json" }.forEach {
             modelFiles[it] = it.readText()
         }
 
@@ -157,11 +184,13 @@ object Backend {
 
     fun updateHistory(root: File, namespace: String) {
         logger.info("Updating history")
-
+        
         cache.history.removeAll { it.path.replace("\\", "/") == root.path.replace("\\", "/") && it.namespace == namespace }
         cache.history.addFirst(HistoryElement(root.path.replace("\\", "/"), namespace))
-        if (cache.history.size > 20) { cache.history.removeLast() }
-
+        if(cache.history.size > 20) {
+            cache.history.removeLast()
+        }
+        
         saveCache()
     }
 

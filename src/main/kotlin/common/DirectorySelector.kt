@@ -1,5 +1,6 @@
 package common
 
+import backend.debug.logger
 import org.lwjgl.system.MemoryUtil
 import org.lwjgl.util.nfd.NativeFileDialog
 import java.io.File
@@ -17,8 +18,11 @@ object DirectorySelector  {
                     after(File(path))
                 }
                 NativeFileDialog.NFD_CANCEL -> null
-                NativeFileDialog.NFD_ERROR -> error("An error occurred while executing NativeFileDialog.NFD_PickFolder")
-                else -> error("Unknown return code '${code}' from NativeFileDialog.NFD_PickFolder")
+                NativeFileDialog.NFD_ERROR -> {
+                    logger.severe("An error occurred while executing NativeFileDialog.NFD_PickFolder")
+                    logger.severe(NativeFileDialog.NFD_GetError())
+                }
+                else -> logger.warning("Unknown return code '${code}' from NativeFileDialog.NFD_PickFolder")
             }
         } finally {
             MemoryUtil.memFree(pathPointer)

@@ -1,8 +1,8 @@
 package classes.minecraft
 
 import backend.Backend
-import common.Utilities.runIf
 import classes.minecraft.lists.structures.Folders
+import common.Utilities.runIf
 import java.io.File
 
 data class Key(val namespace: String, val value: String) {
@@ -16,7 +16,7 @@ data class Key(val namespace: String, val value: String) {
     }
 
     fun toPath(type: Folders): String {
-        return "${Backend.Pack.current.root}/assets/$namespace/$type/$value${type.fileExtension}"
+        return "${Backend.Pack.root}/assets/$namespace/$type/$value${type.fileExtension}"
     }
 
     companion object {

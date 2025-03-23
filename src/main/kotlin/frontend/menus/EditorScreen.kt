@@ -7,7 +7,6 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.pointer.PointerIcon
 import androidx.compose.ui.input.pointer.pointerHoverIcon
@@ -27,7 +26,7 @@ import java.awt.Cursor
 @OptIn(ExperimentalSplitPaneApi::class)
 @Composable
 @Preview
-fun MainMenu() {
+fun EditorScreen() {
 
     val splitterState = rememberSplitPaneState(0.4F)
 
@@ -36,7 +35,7 @@ fun MainMenu() {
 
             Row(modifier = Modifier.fillMaxSize()) {
 
-                //Sidebar()
+                Sidebar()
                 HorizontalSplitPane(splitPaneState = splitterState) {
                     first( 300.dp) { Explorer(Modifier.weight(1F), rememberScrollState()) }
                     second(300.dp) { Editor(  Modifier.weight(1F) ) }

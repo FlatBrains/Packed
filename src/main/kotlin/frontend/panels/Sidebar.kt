@@ -2,6 +2,7 @@ package frontend.panels
 
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.width
 import androidx.compose.runtime.Composable
@@ -14,8 +15,12 @@ import frontend.components.SidebarButton
 @Composable
 fun Sidebar() {
     Column(modifier = Modifier.width(50.dp).fillMaxHeight()) {
-        SidebarButton.buttons.forEach {
+        
+        
+        Spacer(Modifier.weight(1F))
+        SidebarButton.bottom.forEach {
             it.render(Modifier.align(Alignment.CenterHorizontally))
         }
+        
     }
 }
