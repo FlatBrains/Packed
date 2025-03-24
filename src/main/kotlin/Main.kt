@@ -16,17 +16,13 @@ import java.awt.Dimension
 @OptIn(ExperimentalComposeUiApi::class)
 fun main(): Unit = application {
     
-    
-    
-    
-    
     Window(
         onCloseRequest = ::exitApplication,
         title = App.title.value,
         icon = Icon.Packed.painter(),
         resizable = true,
     ) {
-        window.minimumSize = Dimension(1000, 600)
+        window.minimumSize = Dimension(1200, 600)
         window.exceptionHandler = WindowExceptionHandler { logger.severe(it.message); it.printStackTrace() }
         
         Backend // init

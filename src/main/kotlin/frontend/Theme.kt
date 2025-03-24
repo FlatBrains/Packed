@@ -8,11 +8,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.platform.Font
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import frontend.components.Image
 
 object Mocha {
@@ -84,7 +86,28 @@ val JetBrainsMono = FontFamily(
 )
 
 val Typography = Typography(
-    defaultFontFamily = JetBrainsMono
+    defaultFontFamily = JetBrainsMono,
+    
+    button = TextStyle(
+        fontFamily = JetBrainsMono,
+        color = Mocha.Text
+    ),
+    h1 = TextStyle(
+        fontFamily = JetBrainsMono,
+        color = Mocha.Text,
+        fontSize = 32.sp
+    ),
+    
+    body1 = TextStyle(
+        fontSize = 16.sp,
+        fontFamily = JetBrainsMono,
+        color = Mocha.Text,
+    ),
+    
+    subtitle1 = TextStyle(
+        fontFamily = JetBrainsMono,
+        color = Mocha.Overlay1
+    )
 
 )
 /*

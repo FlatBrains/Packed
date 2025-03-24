@@ -2,7 +2,6 @@ package frontend.menus
 
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
@@ -12,7 +11,6 @@ import androidx.compose.material.icons.outlined.FolderOpen
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import backend.Backend
@@ -22,6 +20,7 @@ import frontend.DarkColorPalette
 import frontend.Mocha
 import frontend.Shapes
 import frontend.Typography
+import frontend.components.Image
 import frontend.modifiers.rightClickMenu
 import java.io.File
 
@@ -56,15 +55,15 @@ fun HomeScreen() {
             
             Column(modifier = Modifier.fillMaxHeight().weight(1F).background(Mocha.Mantle), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                    Text("Recent Packs", color = Mocha.Text, fontSize = 30.sp)
+                    Text("Recent Packs", style = MaterialTheme.typography.h1)
                     Spacer(Modifier.padding(20.dp))
                     Column {
                         if (Backend.cache.history.size != 0) {
                             Row(Modifier.fillMaxWidth(0.5F)) {
                                 Spacer(Modifier.width(5.dp))
-                                Text(File("Name").name, color = Mocha.Overlay1)
+                                Text(File("Name").name, style = MaterialTheme.typography.subtitle1)
                                 Spacer(modifier = Modifier.weight(1F))
-                                Text("Namespace", color = Mocha.Overlay1)
+                                Text("Namespace", style = MaterialTheme.typography.subtitle1)
                                 Spacer(Modifier.width(5.dp))
                             }
                             
@@ -74,17 +73,23 @@ fun HomeScreen() {
                                 Row(Modifier.fillMaxWidth(0.5F)) {
                                     TextButton(
                                         { Backend.launch(File(it.path), it.namespace) },
-                                        modifier = Modifier.rightClickMenu { Text("${it.path}/assets/${it.namespace}", color = Mocha.Text, fontSize = 10.sp) }
+                                        modifier = Modifier.rightClickMenu {
+                                            
+                                            
+                                            Text("Path:")
+                                            Text("${it.path}/assets/${it.namespace}", fontSize = 10.sp)
+                                            
+                                        }
                                     ) {
-                                        Text(File(it.path).name, color = Mocha.Text)
+                                        Text(File(it.path).name)
                                         Spacer(modifier = Modifier.weight(1F))
-                                        Text(it.namespace, color = Mocha.Text)
+                                        Text(it.namespace)
                                     }
                                     
                                 }
                             }
                         } else {
-                            Text("None, yet...", color = Mocha.Text)
+                            Text("None, yet...")
                         }
                     }
                     
@@ -94,30 +99,32 @@ fun HomeScreen() {
                     
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     
-                    Text("Open Pack", color = Mocha.Text, fontSize = 30.sp)
+                    Text("Open Pack", style = MaterialTheme.typography.h1)
+                    
+                    
                     
                     Spacer(Modifier.padding(20.dp))
                     
                     val textFieldColors: TextFieldColors =
-                        if (packPath == null) TextFieldDefaults.textFieldColors(textColor = Mocha.Text)
+                        if (packPath == null) TextFieldDefaults.textFieldColors(Mocha.Text)
                         else TextFieldDefaults.textFieldColors(
+                            Mocha.Text,
                             focusedLabelColor = Mocha.Green,
                             unfocusedLabelColor = Mocha.Green,
                             focusedIndicatorColor = Mocha.Green,
                             unfocusedIndicatorColor = Mocha.Green,
                             cursorColor = Mocha.Green,
-                            textColor = Mocha.Text
                         )
                     
                     val namespaceFieldColors: TextFieldColors =
-                        if (namespace == null) TextFieldDefaults.textFieldColors(textColor = Mocha.Text)
+                        if (namespace == null) TextFieldDefaults.textFieldColors(Mocha.Text)
                         else TextFieldDefaults.textFieldColors(
+                            Mocha.Text,
                             focusedLabelColor = Mocha.Green,
                             unfocusedLabelColor = Mocha.Green,
                             focusedIndicatorColor = Mocha.Green,
                             unfocusedIndicatorColor = Mocha.Green,
                             cursorColor = Mocha.Green,
-                            textColor = Mocha.Text
                         )
                     
                     val buttonColor: ButtonColors =
@@ -153,7 +160,7 @@ fun HomeScreen() {
                         IconButton({
                             DirectorySelector.show { updatePackPathTextField(it.path) }
                                    }, Modifier.size(56.dp)) {
-                            Image(Icons.Outlined.FolderOpen, null, colorFilter = ColorFilter.tint(Mocha.Text))
+                            Image(Icons.Outlined.FolderOpen)
                         }
                     }
                     

@@ -25,7 +25,7 @@ import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalComposeUiApi::class, DelicateCoroutinesApi::class)
 @Composable
-fun Modifier.addHoverEffect(
+fun Modifier.hoverEffect(
     content: @Composable BoxScope.() -> Unit
 ): Modifier {
     var isHovered by remember { mutableStateOf(false) }
@@ -74,8 +74,6 @@ fun Modifier.addHoverEffect(
         .onPointerEvent(PointerEventType.Move) {
             hoverPosition = it.changes.first().position
             isStable = false
-            
-            
         }
         .onPointerEvent(PointerEventType.Enter) {
             isHovered = true
