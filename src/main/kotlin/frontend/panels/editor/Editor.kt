@@ -1,4 +1,4 @@
-package frontend.panels
+package frontend.panels.editor
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.IconButton
@@ -14,10 +14,13 @@ import backend.Backend
 import classes.minecraft.Key.Companion.toKeyString
 import classes.minecraft.Key.Companion.toPackPath
 import classes.minecraft.lists.structures.Folders
-import frontend.Icon
 import frontend.Mocha
 import frontend.Shapes
+import frontend.components.Image
 import frontend.components.ScrollableColumn
+import packed.Res
+import packed.blockbench
+import packed.notepad
 import java.io.File
 
 @Composable
@@ -51,12 +54,12 @@ fun Editor(modifier: Modifier) {
                                 IconButton(
                                     onClick = { Backend.openWithNotepad(File(it.toPackPath(Folders.Models))) },
                                     modifier = Modifier.height(50.dp)
-                                ) { Icon.Notepad.toImage()}
+                                ) { Image(Res.drawable.notepad) }
 
                                 IconButton(
                                     onClick = { Backend.openWithBlockbench(File(it.toPackPath(Folders.Models))) },
                                     modifier = Modifier.height(50.dp)
-                                ) { Icon.Blockbench.toImage() }
+                                ) { Image(Res.drawable.blockbench) }
                             }
 
 

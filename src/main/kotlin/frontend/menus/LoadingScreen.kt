@@ -7,8 +7,10 @@ import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import frontend.Icon
 import frontend.Mocha
+import frontend.components.Image
+import packed.Res
+import packed.packed_white
 
 
 @Composable
@@ -19,10 +21,8 @@ fun LoadingScreen() {
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier.fillMaxSize()
         ) {
-
-            //Image(Icon, null, Modifier.fillMaxSize(0.5F))
             
-            Icon.PackedWhite.toImage(modifier = Modifier.fillMaxSize(0.5F))
+            Image(Res.drawable.packed_white, modifier = Modifier.fillMaxSize(0.5F))
 
         }
     }

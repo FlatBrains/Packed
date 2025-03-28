@@ -15,9 +15,9 @@ import frontend.DarkColorPalette
 import frontend.Mocha
 import frontend.Shapes
 import frontend.Typography
-import frontend.panels.Editor
-import frontend.panels.Explorer
-import frontend.panels.Sidebar
+import frontend.panels.editor.Editor
+import frontend.panels.editor.Explorer
+import frontend.panels.editor.Sidebar
 import org.jetbrains.compose.splitpane.ExperimentalSplitPaneApi
 import org.jetbrains.compose.splitpane.HorizontalSplitPane
 import org.jetbrains.compose.splitpane.rememberSplitPaneState

@@ -186,11 +186,16 @@ object Backend {
         logger.info("Updating history")
         
         cache.history.removeAll { it.path.replace("\\", "/") == root.path.replace("\\", "/") && it.namespace == namespace }
-        cache.history.addFirst(HistoryElement(root.path.replace("\\", "/"), namespace))
+        cache.history.add(0, HistoryElement(root.path.replace("\\", "/"), namespace))
         if(cache.history.size > 20) {
             cache.history.removeLast()
         }
         
+        saveCache()
+    }
+    
+    fun removeHistory(element: HistoryElement) {
+        Backend.cache.history.remove(element)
         saveCache()
     }
 

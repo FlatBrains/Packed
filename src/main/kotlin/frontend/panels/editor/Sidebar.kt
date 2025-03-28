@@ -1,4 +1,4 @@
-package frontend.panels
+package frontend.panels.editor
 
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.layout.Column

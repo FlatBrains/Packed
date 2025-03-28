@@ -4,10 +4,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes
 import androidx.compose.material.Typography
 import androidx.compose.material.darkColors
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
@@ -15,7 +12,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.platform.Font
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import frontend.components.Image
+
 
 object Mocha {
     val Rosewater = Color(0xFFF5E0DC)
@@ -120,25 +117,3 @@ fun getIcon(path: String): Painter {
 */
 
 
-
-enum class Icon(private val path: String) {
-    Packed("packed.svg"),
-    PackedWhite("packed_white.svg"),
-    Aseprite("aseprite.png"),
-    Blockbench("blockbench.svg"),
-    Notepad("notepad.svg"),
-    Search("search.svg"),
-    ;
-
-    @Composable
-    fun painter() = painterResource("images/$path")
-    
-    @Composable
-    fun toImage(
-        color: Color = Mocha.Text,
-        description: String? = null,
-        modifier: Modifier = Modifier
-    ) = Image(this, description, color, modifier)
-
-
-}

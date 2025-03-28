@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jpackage" build-on-make="true" name="Packed.main">
+    <output-path>$PROJECT_DIR$/out/artifacts/Packed_main</output-path>
+    <root id="root">
+      <element id="archive" name="Packed_main.jar">
+        <element id="module-output" name="Packed.main" />
+      </element>
+    </root>
+  </artifact>
+</component>
