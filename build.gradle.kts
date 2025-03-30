@@ -30,8 +30,11 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.0")
     
     implementation("org.jetbrains.compose.components:components-splitpane-desktop:1.8.0-beta01")
-    //implementation("androidx.compose.ui:ui:1.7.0")
-    implementation("androidx.compose.material:material-icons-extended:1.7.8")
+    implementation("org.jetbrains.compose.ui:ui-unit:1.7.3")
+    //implementation("androidx.compose.ui:ui-util:1.7.8")
+    implementation("org.jetbrains.compose.ui:ui-util:1.7.3")
+    
+    implementation("org.jetbrains.compose.material:material-icons-extended:1.7.3")
     
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0")
     
@@ -60,8 +63,14 @@ compose.resources {
 
 kotlin {
     jvmToolchain(21)
+    
 }
 
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(21))
+    }
+}
 compose.desktop {
     
     application {
@@ -75,14 +84,20 @@ compose.desktop {
             packageName = "Packed"
             packageVersion = "1.0.0"
             
-            
-            buildTypes.release.proguard  {
-                isEnabled = false
+            windows {
+                iconFile.set(project.file("src/main/resources/images/packed.ico"))
             }
             
-            jvmArgs += "-Djava.version=21"
-            modules = arrayListOf("java.base", "java.desktop")
+            
+/*            buildTypes.release.proguard  {
+                isEnabled = false
+            }*/
+            
+            
+            //modules = arrayListOf("java.base", "java.desktop")
             javaHome = "C:\\Program Files\\Java\\jdk-21.0.6"
+            
+            
             
             
         }

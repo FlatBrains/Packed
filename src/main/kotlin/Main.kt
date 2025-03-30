@@ -28,8 +28,12 @@ fun main(): Unit = application {
         resizable = true,
     ) {
         
+        
         window.minimumSize = Dimension(1200, 600)
+        
         window.exceptionHandler = WindowExceptionHandler { logger.severe(it.message); it.printStackTrace() }
+        
+       
         
         when(App.appState.value) {
             AppState.HOME -> HomeScreen()
