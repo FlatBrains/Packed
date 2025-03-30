@@ -61,7 +61,7 @@ compose.resources {
 }
 
 
-kotlin {
+/*kotlin {
     jvmToolchain(21)
     
 }
@@ -70,7 +70,7 @@ java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(21))
     }
-}
+}*/
 compose.desktop {
     
     application {
@@ -79,25 +79,25 @@ compose.desktop {
         nativeDistributions {
             targetFormats(
                 TargetFormat.Exe, TargetFormat.Msi, //windows
-               // TargetFormat.AppImage, TargetFormat.Deb, TargetFormat.Rpm, //linux
+                TargetFormat.AppImage, TargetFormat.Deb, TargetFormat.Rpm, //linux
             )
             packageName = "Packed"
             packageVersion = "1.0.0"
             
-            windows {
+          windows {
                 iconFile.set(project.file("src/main/resources/images/packed.ico"))
             }
             
             
 /*            buildTypes.release.proguard  {
                 isEnabled = false
-            }*/
+            }*//*
             
             
             //modules = arrayListOf("java.base", "java.desktop")
             javaHome = "C:\\Program Files\\Java\\jdk-21.0.6"
             
-            
+            */
             
             
         }
