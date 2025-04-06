@@ -9,7 +9,7 @@ plugins {
     
 
 }
-
+description = "Easy to use editor for minecraft resource packs and more!"
 group = "net.lambdagames"
 version = "1.0-SNAPSHOT"
 
@@ -60,17 +60,6 @@ compose.resources {
     generateResClass = auto
 }
 
-
-/*kotlin {
-    jvmToolchain(21)
-    
-}
-
-java {
-    toolchain {
-        languageVersion.set(JavaLanguageVersion.of(21))
-    }
-}*/
 compose.desktop {
     
     application {
@@ -78,28 +67,22 @@ compose.desktop {
         
         nativeDistributions {
             targetFormats(
-                TargetFormat.Exe, TargetFormat.Msi, //windows
-                TargetFormat.AppImage, TargetFormat.Deb, TargetFormat.Rpm, //linux
-            )
+                TargetFormat.Msi, TargetFormat.Exe,
+                TargetFormat.Deb, TargetFormat.Rpm, TargetFormat.AppImage,
+                TargetFormat.Dmg, TargetFormat.Pkg
+                )
             packageName = "Packed"
             packageVersion = "1.0.0"
             
-          windows {
+            windows {
                 iconFile.set(project.file("src/main/resources/images/packed.ico"))
+                menuGroup = "Packed"
+                dirChooser = true
+                perUserInstall = true
+                upgradeUuid = "26613439-95a1-45b4-b2d0-b6e064317dcd" // That is my minecraft uuid | "That is unironically based as hell and I fully support it." -Chat Fucking GPT
             }
-            
-            
-/*            buildTypes.release.proguard  {
-                isEnabled = false
-            }*//*
-            
-            
-            //modules = arrayListOf("java.base", "java.desktop")
-            javaHome = "C:\\Program Files\\Java\\jdk-21.0.6"
-            
-            */
-            
-            
         }
     }
 }
+
+// May your builds be many, and you merges few
