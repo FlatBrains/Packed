@@ -1,5 +1,6 @@
 package frontend.menus
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -8,7 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import frontend.Mocha
-import frontend.components.Image
+import org.jetbrains.compose.resources.painterResource
 import packed.Res
 import packed.packed_white
 
@@ -21,8 +22,7 @@ fun LoadingScreen() {
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier.fillMaxSize()
         ) {
-            
-            Image(Res.drawable.packed_white, modifier = Modifier.fillMaxSize(0.5F))
+            Image(painterResource(Res.drawable.packed_white), null, modifier = Modifier.fillMaxSize(0.5F))
 
         }
     }

@@ -39,8 +39,7 @@ fun RowScope.openPack() {
         verified = verifier()
     }
     
-    Column(modifier = Modifier.fillMaxHeight().weight(1F).background(Mocha.Base), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
-        
+    Column(modifier = Modifier.fillMaxSize().weight(1F).background(Mocha.Base), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             
             Text("Open Pack", style = MaterialTheme.typography.h1)
